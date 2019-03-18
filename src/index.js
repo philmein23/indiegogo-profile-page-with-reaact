@@ -118,7 +118,22 @@ function App() {
           {data &&
             data.length &&
             data.map(perk => {
-              return <div>{perk.perkName}</div>;
+              return (
+                <div className="perk-info">
+                  <div className="perk-image-container">
+                    <img src={perk.imageUrl} alt="perk-image" />
+                  </div>
+                  <div className="perk-data">{perk.perkName}</div>
+                  <div>{perk.price}</div>
+                  <div>
+                    <div>Estimated Shipping</div>
+                    <div>{perk.estimatedDelivery}</div>
+                  </div>
+                  <div>
+                    <button class="get-perk">Get this Perk</button>
+                  </div>
+                </div>
+              );
             })}
         </div>
       </div>
